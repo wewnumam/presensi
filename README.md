@@ -1,6 +1,11 @@
 # Sistem Presensi Sederhana Dengan Kode QR
 Sistem presensi berbasis web dengan kode qr. Didesain semudah mungkin untuk pengguna.
 
+## Configuration
+1. Create database 'presensi', then import database using 'presensi.sql' file
+2. Database configuration in 'application/config/database.php'
+2. Base url configuration in 'application/config/config.php'
+
 ## Alur
 1. Pertama, user harus login menggunakan gawai di website yang tersedia dan mengaktifkan checkbox “ingat saya” agar user tidak perlu login lagi.
 2. Kemudian, user membuka aplikasi QR Scanner di gawai dan memindai qr code yang telah disediakan oleh sekolah. 
