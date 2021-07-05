@@ -99,12 +99,31 @@ class CI_Controller {
 	{
 		return self::$instance;
 	}
-
+        
+        /**
+         * View template
+         * 
+         * @return void
+         */
 	public function template($view_path, $data = [])
 	{
-		$this->load->view('templates/header.php');
+		$this->load->view('templates/header');
 		$this->load->view($view_path, $data);
-		$this->load->view('templates/footer.php');
+		$this->load->view('templates/footer');
+	}
+        
+        /**
+         * Admin view template
+         * 
+         * @return void
+         */
+        public function admin($view_path, $data = [])
+	{
+		$this->load->view('templates/header');
+                $this->load->view('templates/sidebar_start');
+		$this->load->view($view_path, $data);
+                $this->load->view('templates/sidebar_end');
+		$this->load->view('templates/footer');
 	}
 
 }

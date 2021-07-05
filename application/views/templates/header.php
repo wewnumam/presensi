@@ -9,11 +9,12 @@
 </head>
 
 <body>
+    <script src="<?= base_url('assets/js/jquery-3.5.1.min.js') ?>"></script>
     <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="container">
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+            <a class="navbar-item" href="">
+                <h1 class="title is-4">PRESENSI</h1>
             </a>
 
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
@@ -26,26 +27,35 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item" href="/">
+                <a class="navbar-item" href="<?= base_url('') ?>">
                     Home
                 </a>
-
-                <a class="navbar-item">
-                    Documentation
+                <a class="navbar-item" href="<?= base_url('logs') ?>">
+                    Logs
                 </a>
-
+                <a class="navbar-item" href="<?= base_url('admin') ?>">
+                    Admin
+                </a>
             </div>
 
             <div class="navbar-end">
                 <div class="navbar-item">
+                    <?php if($this->session->has_userdata('username')): ?>
                     <div class="buttons">
-                        <a class="button is-primary">
-                            <strong>Sign up</strong>
+                        <a class="button is-light">
+                            <?= $this->session->username ?>
                         </a>
-                        <a class="button is-light" href="<?= base_url('user/login') ?>">
-                            Log in
+                        <a class="button is-danger" href="<?= base_url('user/logout') ?>">
+                            <strong>Logout</strong>
                         </a>
                     </div>
+                    <?php else: ?>
+                    <div class="buttons">
+                        <a class="button is-primary" href="<?= base_url('user/login') ?>">
+                            Login
+                        </a>
+                    </div>
+                    <?php endif ?>
                 </div>
             </div>
         </div>
