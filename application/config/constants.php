@@ -92,3 +92,7 @@ defined('KODE_AVAILABLE')  OR define('KODE_AVAILABLE', 0);
 defined('KODE_NOT_FOUND')  OR define('KODE_NOT_FOUND', 1);
 defined('KODE_USED')  OR define('KODE_USED', 2);
 defined('KODE_ASSIGN_SUCCESS')  OR define('KODE_ASSIGN_SUCCESS', 3);
+defined('KODE_AUTO_GENERATE_SUCCESS')  OR define('KODE_AUTO_GENERATE_SUCCESS', 4);
+defined('KODE_AUTO_GENERATE_FAILED')  OR define('KODE_AUTO_GENERATE_FAILED', 5);
+
+defined('KODE_MAX_QUEUE')  OR define('KODE_MAX_QUEUE', 5);
