@@ -15,7 +15,10 @@ class Admin extends CI_Controller {
 		if ($this->Counter->get_counter() > KODE_MAX_QUEUE - 1) $this->Counter->reset_counter();
 
 		$this->load->view('header');
-		$this->load->view('admin/index', ['kode' => $this->Presensi->get_unused_kode($this->Counter->get_counter())->kode]);
+		$this->load->view('admin/index', [
+			'kode' => $this->Presensi->get_unused_kode($this->Counter->get_counter())->kode,
+			'data' => $this->Presensi->get_used_kode()
+		]);
 		$this->load->view('footer');
 	}
 }

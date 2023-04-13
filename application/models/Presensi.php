@@ -42,6 +42,16 @@ class Presensi extends CI_Model {
         return $this->db->get()->result()[0];
     }
 
+    public function get_used_kode() {
+        $this->db->select('*');
+        $this->db->from($this->table);
+        $this->db->join('user', 'user.id = presensi.id_user');
+        $this->db->where('telah_digunakan', 1);
+        $this->db->order_by('waktu', 'DESC');
+        $this->db->limit(3);
+        return $this->db->get()->result();
+    }
+
     public function get_unused_kode($index) {
         $this->db->select('*');
         $this->db->from($this->table);
